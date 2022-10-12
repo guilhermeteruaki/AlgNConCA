@@ -4,6 +4,8 @@
  */
 package algca;
 
+import view.Menu;
+
 /**
  *
  * @author guilh
@@ -14,7 +16,8 @@ public class AlgCA {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("hello world");
+        Menu menu = new Menu();
+        menu.mainMenu();
     }
     
 }

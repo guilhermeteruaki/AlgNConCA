@@ -21,6 +21,7 @@ public class Menu {
         exitMenu=false;
         while (exitMenu == false){
             userChoice = util.askForInt("""
+                                        Welcome to CCT library app!
                                      ************* MAIN MENU ***********
                                      Please select one of these options:
                                      1- aaaaaaaaaaa
@@ -58,9 +59,10 @@ public class Menu {
                     
                     break;                            
                 case 8:   
-                   
+                    
                     break;
                 case 999:
+                    System.out.println("Thank You for using the app. Please come back again !");
                     exitMenu=true;
                             
                     break;
