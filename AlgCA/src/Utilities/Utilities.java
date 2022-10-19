@@ -69,7 +69,7 @@ public class Utilities {
                 System.out.println("This is not a Integer try again");
                 userInput.nextLine();
             } 
-        }while(valid==false);//rerun if input is not valid
+        }while(!valid);//rerun if input is not valid
         
         return userInt;
     }
@@ -93,7 +93,7 @@ public class Utilities {
                 System.out.println("This is not a Integer try again");
                 userInput.nextLine();
             } 
-        }while(valid==false);//rerun if input is not valid
+        }while(!valid);//rerun if input is not valid
         
         return userInt;
     }
