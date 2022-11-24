@@ -4,6 +4,8 @@
  */
 package view;
 import Utilities.Utilities;
+import model.Books;
+import model.Students;
 
 
 /**
@@ -19,13 +21,21 @@ public class Menu {
   
     public void mainMenu(){
         exitMenu=false;
+        Books[] books;
+        Books book = new Books();
+        books = book.readBooks("MOCK_DATA.csv");
+        
+        Students[] students;
+        Students student = new Students();
+        students = student.readStudents("student.txt");
+        
         while (exitMenu == false){
             userChoice = util.askForInt("""
                                         Welcome to CCT library app!
                                      ************* MAIN MENU ***********
                                      Please select one of these options:
-                                     1- aaaaaaaaaaa
-                                     2- bbbbbbbbbbb
+                                     1- List All Books
+                                     2- List All Students
                                      3- ccccccccccccccccc
                                      4- ddddddddddddd
                                      5- eeeeeeeeee
@@ -39,10 +49,10 @@ public class Menu {
             
             switch(userChoice){
                 case 1:
-                    
+                    book.listBooks(books);
                     break;
                 case 2:
-                    
+                    student.listingStudents(students);
                     break;
                 case 3:
                     
