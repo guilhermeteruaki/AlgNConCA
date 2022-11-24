@@ -1,0 +1,17 @@
+id,name,nationality
+01,Davison Ferreira,Brazilian
+02,Guilherme Teruaki,Brazilian
+04,Manuel Alejandro,Mexican
+03,Rosana Torres,Brazilian
+05,Matheus Costa,Matheus Costa
+06,Carlos Wilker,Brazilian
+11,Janaina Aparecida,Brazilian
+10,Cleuterson,Brazilian
+07,Fatih Elgormus,Turkish
+08,Rodrigo Manuel,Paraguayan
+09,Anastasiia Dumanitskaia,Russian
+13,Mustaffa,Turkish
+12,Robertta Maia,Brazilian
+14,Ronan McCann,Irish
+15,Arturo Daniel,Mexican
+16,Aldana Louzan,Argentinian
