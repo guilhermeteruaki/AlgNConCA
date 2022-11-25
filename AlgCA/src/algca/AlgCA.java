@@ -5,6 +5,8 @@
 package algca;
 
 import view.Menu;
+import Utilities.Library_initializer;
+import model.CCT_Library;
 
 /**
  *
@@ -16,7 +18,10 @@ public class AlgCA {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         Menu menu = new Menu();
+        Library_initializer init = new Library_initializer();
+        init.Library_initializer();
         menu.mainMenu();
     }
     

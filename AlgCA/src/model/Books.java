@@ -18,20 +18,20 @@ public class Books {
     private String genre;
     private boolean rent_status=false;
     
-    public Books() {
-        this.id = "";
-        this.title = "";
-        this.authorFirstName = "";
-        this.authorLastName = "";
-        this.genre = "";
-    }
+//    public Books() {
+//        this.id = "";
+//        this.title = "";
+//        this.authorFirstName = "";
+//        this.authorLastName = "";
+//        this.genre = "";
+//    }
     
     public Books (String id, String title, String authorFirstName, String authorLastName, String genre) {
-        this.id = "";
-        this.title = "";
-        this.authorFirstName = "";
-        this.authorLastName = "";
-        this.genre = "";
+        this.id = id;
+        this.title = title;
+        this.authorFirstName = authorFirstName;
+        this.authorLastName = authorLastName;
+        this.genre = genre;
     }
     
     public void rent_book(boolean rented){
@@ -81,40 +81,40 @@ public class Books {
         this.genre = genre;
     }
     
-    public Books[] readBooks (String fileName) {
-        File file = new File(fileName);
-        Books book;
-        Books[] books;
-        Operations function = new Operations();
-        books = new Books[function.countRows(file)];
-        
-        try {
-            FileInputStream fis = new FileInputStream(file);
-            InputStreamReader isr = new InputStreamReader(fis);
-            BufferedReader bf = new BufferedReader(isr);
-            String row;
-            row = bf.readLine();
-            int rows = 0;
-            while (true) {
-                row = bf.readLine();
-                if (row == null)
-                    break;
-                String [] data = row.split(",");
-                book = new Books();
-                book.setId(data[0]);
-                book.setTitle(data[1]);
-                book.setAuthorFirstName(data[2]);
-                book.setAuthorLastName(data[3]);
-                book.setGenre(data[4]);
-                books[rows] = book;
-                rows++;
-            }
-            bf.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return books;
-    }
+//    public Books[] readBooks (String fileName) {
+//        File file = new File(fileName);
+//        Books book;
+//        Books[] books;
+//        Operations function = new Operations();
+//        books = new Books[function.countRows(file)];
+//        
+//        try {
+//            FileInputStream fis = new FileInputStream(file);
+//            InputStreamReader isr = new InputStreamReader(fis);
+//            BufferedReader bf = new BufferedReader(isr);
+//            String row;
+//            row = bf.readLine();
+//            int rows = 0;
+//            while (true) {
+//                row = bf.readLine();
+//                if (row == null)
+//                    break;
+//                String [] data = row.split(",");
+//                book = new Books();
+//                book.setId(data[0]);
+//                book.setTitle(data[1]);
+//                book.setAuthorFirstName(data[2]);
+//                book.setAuthorLastName(data[3]);
+//                book.setGenre(data[4]);
+//                books[rows] = book;
+//                rows++;
+//            }
+//            bf.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return books;
+//    }
     
     public int listBooks(Books[] books) {
         int total = 0;

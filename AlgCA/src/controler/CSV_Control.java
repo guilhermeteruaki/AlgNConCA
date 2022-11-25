@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  *
  * @author guilh
- * Contains the methods to control Jason files
+ * Contains the methods to control CSV files
  * 
  */
 public class CSV_Control {

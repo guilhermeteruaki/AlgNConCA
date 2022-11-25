@@ -4,10 +4,12 @@
  */
 package view;
 import Utilities.Utilities;
+import algca.AlgCA;
 import model.Books;
 import model.Students;
 import controler.CSV_Control;
 import java.util.ArrayList;
+import model.*;
 
 
 /**
@@ -20,17 +22,13 @@ public class Menu {
     Utilities util = new Utilities();
     public Menu() {
     }
+    
+    
   
     public void mainMenu(){
+        CCT_Library cct = new CCT_Library();
         exitMenu=false;
-        Books[] books;
-        Books book = new Books();
-        books = book.readBooks("MOCK_DATA.csv");
-        
-        Students[] students;
-        Students student = new Students();
-        students = student.readStudents("student.txt");
-        
+//        
         while (exitMenu == false){
             userChoice = util.askForInt("""
                                         Welcome to CCT library app!
@@ -51,22 +49,19 @@ public class Menu {
             
             switch(userChoice){
                 case 1:
-                    book.listBooks(books);
+                    cct.PrintAllBooks();
                     break;
                 case 2:
-                    student.listingStudents(students);
+                    cct.PrintAllStudents();
                     break;
                 case 3:
-                    CSV_Control csv = new CSV_Control();
                     
-                    ArrayList<String[]> file = csv.readCSV("src\\database\\Books\\MOCK_DATA.csv");
                     
-                    for(int i=0; i<file.size(); i++){
-                        
-                        System.out.println(file.get(i)[1]);
-                    } 
+                    
                     break;
                 case 4:
+                    
+                   
                     break;
                 case 5:
                    
