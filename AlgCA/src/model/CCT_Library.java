@@ -17,7 +17,7 @@ public class CCT_Library {
     
     // list of all books and students, needs to be static to be the same in all instances of the class
     private static HashMap<String,Books> All_Books = new HashMap<>();
-    private static HashMap<String,Books> All_Students = new HashMap<>();
+    private static HashMap<Integer,Students> All_Students = new HashMap<>();
     
     /**
      * Add a book to all books list
@@ -28,6 +28,9 @@ public class CCT_Library {
         All_Books.put(id,book);
     }
     
+    public void add_Student_to_Library(Integer id, Students student){
+        All_Students.put(id,student);
+    }
     /**
      * print test
      */
@@ -54,6 +57,12 @@ public class CCT_Library {
                 
         Books bk = new Books(book[0], book[3], book[1], book[2], book[4]);
         add_Book_to_Library(bk.getId(), bk);
+        
+        
+    }public void Create_Students(String[] student){
+                
+        Students st = new Students(Integer.parseInt(student[0]), student[1], student[2]);
+        add_Student_to_Library(st.getId(), st);
         
         
     }

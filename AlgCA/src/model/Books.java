@@ -81,51 +81,5 @@ public class Books {
         this.genre = genre;
     }
     
-//    public Books[] readBooks (String fileName) {
-//        File file = new File(fileName);
-//        Books book;
-//        Books[] books;
-//        Operations function = new Operations();
-//        books = new Books[function.countRows(file)];
-//        
-//        try {
-//            FileInputStream fis = new FileInputStream(file);
-//            InputStreamReader isr = new InputStreamReader(fis);
-//            BufferedReader bf = new BufferedReader(isr);
-//            String row;
-//            row = bf.readLine();
-//            int rows = 0;
-//            while (true) {
-//                row = bf.readLine();
-//                if (row == null)
-//                    break;
-//                String [] data = row.split(",");
-//                book = new Books();
-//                book.setId(data[0]);
-//                book.setTitle(data[1]);
-//                book.setAuthorFirstName(data[2]);
-//                book.setAuthorLastName(data[3]);
-//                book.setGenre(data[4]);
-//                books[rows] = book;
-//                rows++;
-//            }
-//            bf.close();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return books;
-//    }
     
-    public int listBooks(Books[] books) {
-        int total = 0;
-        System.out.println("Listing Books");
-        for (Books book : books) {
-            System.out.println("Title....:"+book.getTitle());
-            System.out.println("Author...:"+ book.authorFirstName + " " + book.authorLastName);
-            System.out.println("Genre....:"+ book.genre);
-            System.out.println("----------------------------------");
-            total++;
-        }
-        return total;
-    }
 }

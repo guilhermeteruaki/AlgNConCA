@@ -21,7 +21,7 @@ public class Library_initializer {
         
     public void Library_initializer(){
       init_Books();
-      //init_Students()
+      init_Students();
         
         
     }
@@ -34,6 +34,13 @@ public class Library_initializer {
         }
     }
     
-    
+    private void init_Students(){
+        ArrayList<String[]> list = csv.readCSV("src\\database\\Students\\student.txt");
+        
+        for(int i=1; i<list.size();i++){
+            
+            cct.Create_Students(list.get(i));    
+        }
+    }
     
 }
