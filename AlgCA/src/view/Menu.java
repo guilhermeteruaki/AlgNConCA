@@ -6,6 +6,8 @@ package view;
 import Utilities.Utilities;
 import model.Books;
 import model.Students;
+import controler.CSV_Control;
+import java.util.ArrayList;
 
 
 /**
@@ -36,7 +38,7 @@ public class Menu {
                                      Please select one of these options:
                                      1- List All Books
                                      2- List All Students
-                                     3- ccccccccccccccccc
+                                     3- test
                                      4- ddddddddddddd
                                      5- eeeeeeeeee
                                      6- ffffffffffffffff
@@ -55,7 +57,14 @@ public class Menu {
                     student.listingStudents(students);
                     break;
                 case 3:
+                    CSV_Control csv = new CSV_Control();
                     
+                    ArrayList<String[]> file = csv.readCSV("src\\database\\Books\\MOCK_DATA.csv");
+                    
+                    for(int i=0; i<file.size(); i++){
+                        
+                        System.out.println(file.get(i)[1]);
+                    } 
                     break;
                 case 4:
                     break;
