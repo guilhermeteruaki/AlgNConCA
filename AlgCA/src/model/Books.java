@@ -16,6 +16,7 @@ public class Books {
     private String authorFirstName;
     private String authorLastName;
     private String genre;
+    private boolean rent_status=false;
     
     public Books() {
         this.id = "";
@@ -32,9 +33,16 @@ public class Books {
         this.authorLastName = "";
         this.genre = "";
     }
-
+    
+    public void rent_book(boolean rented){
+        this.rent_status = rented;
+    }
     public String getId() {
         return id;
+    }
+    
+    public boolean is_rented(){
+        return rent_status;
     }
 
     public void setId(String id) {
