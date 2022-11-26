@@ -72,14 +72,24 @@ public class CSV_Control {
     }
     
 
-    
+    /**
+     * Method to write data file as CSV
+     * @param data Data should be in the form of ArrayList<String[]>
+     * @param path path with name of desired file
+     */
     public void convertToCSV(ArrayList<String[]> data, String path) {
+        /* 
+        This part of the code was addapted from:
+        https://stackoverflow.com/questions/52436120/cannot-find-symbol-error-when-attempting-to-use-stream-on-array-in-java
+        https://www.geeksforgeeks.org/different-ways-for-integer-to-string-conversions-in-java/
+        https://stackoverflow.com/questions/72297709/writing-arraylist-to-csv-file-in-java
+        */
         try{
             FileWriter writer = new FileWriter(path);
             
             for(int i=0; i<data.size();i++){
                 
-            
+            //collects all the data in the array as a single String seaparating values with a comma
                 String collect = Arrays.stream(data.get(i)).collect(Collectors.joining(","));
                 
             writer.write(collect);
