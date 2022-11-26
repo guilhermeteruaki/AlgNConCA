@@ -1,17 +1,15 @@
-id,name,nationality
-1,Davison Ferreira,Brazilian
-2,Guilherme Teruaki,Brazilian
-4,Manuel Alejandro,Mexican
 3,Rosana Torres,Brazilian
+4,Manuel Alejandro,Mexican
 5,Matheus Costa,Matheus Costa
 6,Carlos Wilker,Brazilian
-11,Janaina Aparecida,Brazilian
+7,Fatih Elgormus,Turkish
+8,Rodrigo Manuel,Paraguayan
+9,Anastasiia Dumanitskaia,Russian
 10,Cleuterson,Brazilian
-07,Fatih Elgormus,Turkish
-08,Rodrigo Manuel,Paraguayan
-09,Anastasiia Dumanitskaia,Russian
-13,Mustaffa,Turkish
+11,Janaina Aparecida,Brazilian
 12,Robertta Maia,Brazilian
+13,Mustaffa,Turkish
 14,Ronan McCann,Irish
 15,Arturo Daniel,Mexican
 16,Aldana Louzan,Argentinian
+17,Leandro leonardo, paraiba

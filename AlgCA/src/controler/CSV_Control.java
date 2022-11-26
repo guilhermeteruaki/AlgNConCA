@@ -5,9 +5,18 @@
 package controler;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.*;
+
 
 
 /**
@@ -18,7 +27,7 @@ import java.util.ArrayList;
  */
 public class CSV_Control {
     
-    private String CSV_Separator=",";
+    private final String CSV_Separator=",";
     
     
     /** 
@@ -28,7 +37,7 @@ public class CSV_Control {
      */
     public ArrayList<String[]> readCSV(String file){ // Code adapted from https://www.javatpoint.com/how-to-read-csv-file-in-java
         
-        String line = ""; 
+        String line; 
         
         //array list that holds String arrays
         ArrayList<String[]> result= new ArrayList<>();
@@ -46,23 +55,53 @@ public class CSV_Control {
                     //add temp array to the arraylist
                     result.add(temp);
                 }
+                br.close();
             }
-      
+            catch(FileNotFoundException e){
+                System.out.println("File Not found, please check that your file has the correct name: " +file+ "\n");
+                System.out.println(e.toString());
+            }
+        
             catch(IOException e){
                 System.out.println("Error in readCSV method\n");
                 System.out.println(e.toString());
             }
         
         return result;
+        
+    }
+    
+
+    
+    public void convertToCSV(ArrayList<String[]> data, String path) {
+        try{
+            FileWriter writer = new FileWriter(path);
+            
+            for(int i=0; i<data.size();i++){
+                
+            
+                String collect = Arrays.stream(data.get(i)).collect(Collectors.joining(","));
+                
+            writer.write(collect);
+            writer.write(System.lineSeparator());
+            
+            }writer.close();    
+        }catch (IOException ex){
+            System.out.println("Error in covert to CSV method\n " +ex );
+        
+        }catch(Exception e){
+            System.out.println("Error in covert to CSV method\n " +e );
+        
+        } 
+            
     }
     
     
-      
     
     
     
     
-    
-    
-    
-}
+        
+     
+        
+}       

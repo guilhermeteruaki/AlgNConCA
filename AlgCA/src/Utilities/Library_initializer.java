@@ -6,7 +6,7 @@ package Utilities;
 import controler.CSV_Control;
 import java.util.ArrayList;
 import model.*;
-import view.*;
+
 
 
 
@@ -26,10 +26,10 @@ public class Library_initializer {
         
     }
     private void init_Books(){
-        ArrayList<String[]> list = csv.readCSV("src\\database\\Books\\MOCK_DATA.csv");
+        ArrayList<String[]> list = csv.readCSV("src\\database\\Books\\book.txt");
         
         for(int i=1; i<list.size();i++){
-            
+           
             cct.Create_Books(list.get(i));    
         }
     }

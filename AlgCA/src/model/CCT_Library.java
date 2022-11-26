@@ -42,6 +42,13 @@ public class CCT_Library {
         });
     }
     
+    public HashMap getAllBooks(){
+        return All_Books;
+    }
+    
+    public HashMap getAllStudents(){
+        return All_Students;
+    }
     /**
      * print test
      */

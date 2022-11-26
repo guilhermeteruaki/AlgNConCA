@@ -4,10 +4,7 @@
  */
 package model;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
+
 
 
 public class Books {
@@ -18,13 +15,7 @@ public class Books {
     private String genre;
     private boolean rent_status=false;
     
-//    public Books() {
-//        this.id = "";
-//        this.title = "";
-//        this.authorFirstName = "";
-//        this.authorLastName = "";
-//        this.genre = "";
-//    }
+
     
     public Books (String id, String title, String authorFirstName, String authorLastName, String genre) {
         this.id = id;
@@ -80,6 +71,15 @@ public class Books {
     public void setGenre(String genre) {
         this.genre = genre;
     }
-    
-    
-}
+
+    public String[] getBookArray(){
+        String csv[] = new String[6];
+        csv[0] = id;
+        csv[1] = authorFirstName;
+        csv[2] = authorLastName;
+        csv[3] = title;
+        csv[4] = genre;
+        csv[5] = String.valueOf(rent_status);
+        return csv;
+    }
+}    

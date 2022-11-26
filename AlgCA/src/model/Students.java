@@ -43,8 +43,16 @@ public class Students {
 
     public void setNationality(String nationality) {
         this.nationality = nationality;
-    }
+    } 
     
+    public String[] getStudentArray(){
+        String csv[] = new String[3];
+        csv[0] = Integer.toString(id);
+        csv[1] = name;
+        csv[2] = nationality;
+       
+        return csv;
+    }
     
     
       
