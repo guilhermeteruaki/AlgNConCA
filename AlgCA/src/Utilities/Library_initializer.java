@@ -28,7 +28,7 @@ public class Library_initializer {
     private void init_Books(){
         ArrayList<String[]> list = csv.readCSV("src\\database\\Books\\book.txt");
         
-        for(int i=1; i<list.size();i++){
+        for(int i=0; i<list.size();i++){
            
             cct.Create_Books(list.get(i));    
         }
@@ -37,7 +37,7 @@ public class Library_initializer {
     private void init_Students(){
         ArrayList<String[]> list = csv.readCSV("src\\database\\Students\\student.txt");
         
-        for(int i=1; i<list.size();i++){
+        for(int i=0; i<list.size();i++){
             
             cct.Create_Students(list.get(i));    
         }
