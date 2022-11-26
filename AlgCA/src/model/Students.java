@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 
 /**
  *
@@ -14,6 +16,7 @@ public class Students {
     private int id;
     private String name;
     private String nationality;
+    private ArrayList<String> list_Of_borrowed_Books;
 
     public Students(int id, String name, String nationality) {
         this.id = id;
@@ -54,6 +57,13 @@ public class Students {
         return csv;
     }
     
+    public void addBookToList(String bookID){
+        this.list_Of_borrowed_Books.add(bookID);
+    }
+    
+    public ArrayList get_List_of_Borrowed_Books(){
+        return list_Of_borrowed_Books;
+    }
     
       
 }
