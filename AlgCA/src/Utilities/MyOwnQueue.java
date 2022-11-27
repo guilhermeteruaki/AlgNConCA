@@ -129,4 +129,16 @@ public class MyOwnQueue implements ArrayQueue{
         return toReturn;
     }
     
+    /**
+     * 
+     * @return the queue as an array without empty spots
+     */
+    public String[] get_Full_Queue(){
+       String[] returnArray = new String[queueSize];
+        for (int i=0; i<=last; i++){
+            returnArray[i] = data[i];
+            }
+        
+        return returnArray;
+    }
 }

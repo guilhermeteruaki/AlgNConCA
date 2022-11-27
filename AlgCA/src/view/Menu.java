@@ -26,7 +26,7 @@ public class Menu {
         CCT_Library cct = new CCT_Library();
         Library_Functions cct_F = new Library_Functions();
         exitMenu=false;
-    
+        String userStrChoice;
         while (exitMenu == false){
             userChoice = util.askForInt("""
                                         Welcome to CCT library app!
@@ -39,7 +39,8 @@ public class Menu {
                                      5- Search Book by Author
                                      6- Student by Name
                                      7- Search Student by ID
-                                     8- hhhhhhhhhhhhhhhhh  
+                                     8- Add Student to Book waiting list
+                                     9- Show waiting list for a specific book
                                      999- Exit
                                      *************************************
                                      """);
@@ -75,8 +76,24 @@ public class Menu {
                       
                     break;                            
                 case 8:   
+                    String bk = util.askForString("Please Provide the EXACT ID of the book");
+                    String st = util.askForString("Please Provide the EXACT ID of the Student");
+                    cct_F.add_To_Waiting_List(bk, st);
                     
                     break;
+                    
+                case 9:
+                    userStrChoice = util.askForString("Please Provide the EXACT ID of the book" );
+                    System.out.println("The Id of the students in the waiting list of the book: " +
+                             (((Books)cct.getAllBooks().get(userStrChoice)).getTitle()));
+                    for (int i=0; i<( (((Books)cct.getAllBooks().get(userStrChoice)).get_Waiting_List())).length;i++){
+                       System.out.println((((Books)cct.getAllBooks().get(userStrChoice)).get_Waiting_List())[i]);
+                   }
+                    break;
+                    
+                    
+                    
+                    
                 case 999:
                     System.out.println("Thank You for using the app. Please come back again !");
                     exitMenu=true;

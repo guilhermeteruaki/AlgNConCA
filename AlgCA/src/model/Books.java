@@ -4,6 +4,8 @@
  */
 package model;
 
+import Utilities.MyOwnQueue;
+
 
 
 
@@ -14,6 +16,8 @@ public class Books {
     private String authorLastName;
     private String genre;
     private boolean rent_status=false;
+    private MyOwnQueue student_queue=new MyOwnQueue();
+    
     
 
     
@@ -25,7 +29,7 @@ public class Books {
         this.genre = genre;
     }
     
-    public void rent_book(boolean rented){
+    public void set_rent_book(boolean rented){
         this.rent_status = rented;
     }
     public String getId() {
@@ -80,6 +84,30 @@ public class Books {
         csv[3] = title;
         csv[4] = genre;
         csv[5] = String.valueOf(rent_status);
+        //TODO add queue to CSV
+//        if(!list_Of_borrowed_Books.isEmpty()){
+//            for(int i=3; i<list_Of_borrowed_Books.size()+3; i++){
+//                csv[i] = list_Of_borrowed_Books.get(i-3);
+//            }
         return csv;
     }
+    
+    public void add_Student_To_Queue(String id){
+    this.student_queue.Enqueue(id);
+    }
+   
+    /**
+     * rent the book to the next in Queue
+     * @return return the Id of the student to which book was rented
+    */
+    public String Rent_To_Queue(){
+        set_rent_book(true);
+        String r = this.student_queue.First();
+        this.student_queue.Dequeue();
+        return r;
+    }
+    
+    public String[] get_Waiting_List(){
+        return this.student_queue.get_Full_Queue();
+    } 
 }    

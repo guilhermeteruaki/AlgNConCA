@@ -14,12 +14,13 @@ import model.CCT_Library;
  * @author guilh
  */
 public class Library_Functions {
-    
+    CCT_Library cct= new CCT_Library();
      
     public void Library_Functions(){
         
     }
     
+    //for each from https://www.programiz.com/java-programming/library/hashmap/foreach#:~:text=the%20forEach()%20method%20performs,the%20keys%20and%20reduced%20values
     public void print_All_Books_Titles(HashMap books){
        
         books.forEach((Key, Value)->{ 
@@ -55,6 +56,7 @@ public class Library_Functions {
             }
         }); 
     }
+ 
     public void search_Book_By_ID(HashMap book, String id){
         book.forEach((Key, Value)->{
             if(((Books)Value).getId().toLowerCase().contains(id.toLowerCase())){
@@ -63,7 +65,6 @@ public class Library_Functions {
         });
         
     }    
-    
     
      public void search_Student_By_Name(HashMap student, String name){
     
@@ -82,6 +83,11 @@ public class Library_Functions {
             }
         }); 
     }
+     
+     public void add_To_Waiting_List(String bookId, String StudentID){
+        ((Books)cct.getAllBooks().get(bookId)).add_Student_To_Queue(StudentID);
+         
+     }
     
     
     

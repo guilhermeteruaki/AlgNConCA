@@ -26,7 +26,7 @@ public class Library_initializer {
         
     }
     private void init_Books(){
-        ArrayList<String[]> list = csv.readCSV("src\\database\\Books\\MOCK_DATA.csv");
+        ArrayList<String[]> list = csv.readCSV("src\\database\\Books\\book.txt");
         
         for(int i=0; i<list.size();i++){
            
