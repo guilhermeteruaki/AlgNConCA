@@ -3,12 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package view;
-import Utilities.Utilities;
-import algca.AlgCA;
-import model.Books;
-import model.Students;
-import controler.CSV_Control;
-import java.util.ArrayList;
+import Utilities.*;
+
 import model.*;
 
 
@@ -55,13 +51,34 @@ public class Menu {
                     cct.PrintAllStudents();
                     break;
                 case 3:
-                    
+                    MyOwnQueue q = new MyOwnQueue();
+                    q.Enqueue("1");
+                    q.Enqueue("2");
+                    q.Enqueue("3");
+                    q.Enqueue("4");
+                    q.Enqueue("5");
+                    q.Enqueue("6");
+                    q.Enqueue("7");
+                    q.Enqueue("8");
+                    q.Enqueue("9");
+                    q.Enqueue("10");
+                    q.Enqueue("1");
+                    q.Enqueue("2");
+                    q.Enqueue("3");
+                    q.Enqueue("4");
+                    q.Enqueue("5");
+                    q.Enqueue("6");
+                    q.Enqueue("7");
+           
+                    System.out.println(q.toString());
+                            
                     
                     
                     break;
                 case 4:
-                    
-                   
+                    ((Students) cct.getAllStudents().get(2)).addBookToList("TESTINS");
+                    ((Students) cct.getAllStudents().get(2)).addBookToList("sdaf");
+                    ((Students) cct.getAllStudents().get(2)).addBookToList("a3thetdf");
                     break;
                 case 5:
                    

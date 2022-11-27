@@ -54,7 +54,7 @@ public class CCT_Library {
      */
     public void PrintAllStudents(){
         All_Students.forEach((Key, Value)->{ 
-        System.out.println(Key +" "+Value.getName());
+        System.out.println(Key +" "+Value.getName() + Value.get_List_of_Borrowed_Books().toString());
         });
     }
     
@@ -72,8 +72,11 @@ public class CCT_Library {
                 
         Students st = new Students(Integer.parseInt(student[0]), student[1], student[2]);
         add_Student_to_Library(st.getId(), st);
+        if(student.length>3)
+            for(int i=3; i<student.length;i++){
+                st.addBookToList(student[i]);
         
-        
+            }
     }
     
 }

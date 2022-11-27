@@ -7,6 +7,7 @@ package model;
 import java.util.ArrayList;
 
 
+
 /**
  *
  * @author guilh
@@ -16,7 +17,7 @@ public class Students {
     private int id;
     private String name;
     private String nationality;
-    private ArrayList<String> list_Of_borrowed_Books;
+    private ArrayList<String> list_Of_borrowed_Books = new ArrayList<>();
 
     public Students(int id, String name, String nationality) {
         this.id = id;
@@ -49,11 +50,16 @@ public class Students {
     } 
     
     public String[] getStudentArray(){
-        String csv[] = new String[3];
+        String csv[] = new String[3+list_Of_borrowed_Books.size()];
         csv[0] = Integer.toString(id);
         csv[1] = name;
         csv[2] = nationality;
-       
+        if(!list_Of_borrowed_Books.isEmpty()){
+            for(int i=3; i<list_Of_borrowed_Books.size()+3; i++){
+                csv[i] = list_Of_borrowed_Books.get(i-3);
+            }
+            
+        }    
         return csv;
     }
     
