@@ -5,16 +5,12 @@
 package controler;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.*;
 
 
@@ -49,9 +45,9 @@ public class CSV_Control {
                 
                 //Checks there is still lines in the file to be read
                 while ((line = br.readLine()) != null){
-                                        
+                    
                     //add each attribute of the file line to the temp array
-                    String[] temp = line.split(CSV_Separator);
+                    String[] temp = line.replaceAll("[\"]" , " ").split(CSV_Separator);
                     //add temp array to the arraylist
                     result.add(temp);
                 }

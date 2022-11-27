@@ -36,11 +36,7 @@ public class CCT_Library {
      */
     //for each from https://www.programiz.com/java-programming/library/hashmap/foreach#:~:text=the%20forEach()%20method%20performs,the%20keys%20and%20reduced%20values
     
-    public void PrintAllBooks(){ 
-        All_Books.forEach((Key, Value)->{ 
-        System.out.println(Key +" "+Value.getTitle());
-        });
-    }
+    
     
     public HashMap getAllBooks(){
         return All_Books;
