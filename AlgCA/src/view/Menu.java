@@ -44,6 +44,7 @@ public class Menu {
                                      10- All Books by Title alphabetical order
                                      11- All Books by Author alphabetical order
                                      12- All Students by Name alphabetical order
+                                     13- All Students by ID order
                                      999- Exit
                                      *************************************
                                      """);
@@ -110,6 +111,12 @@ public class Menu {
                     
                     System.out.println("Printing Students by Name Alphabetical order");
                     cct_F.order_Students_Name(cct.getAllStudents());
+                    break;
+                
+                case 13:
+                    
+                    System.out.println("Printing Students by ID order");
+                    cct_F.order_Students_Id(cct.getAllStudents());
                     break;
                     
                 case 999:

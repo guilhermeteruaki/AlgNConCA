@@ -180,4 +180,33 @@ public class Library_Functions {
         }
         
     }
+    
+    public void order_Students_Id (HashMap students){
+        
+        Collection<Students> collectionOfStudents = students.values();
+        ArrayList<Students>  listOfStudents = new ArrayList<>(collectionOfStudents);
+        
+        for(int i=0;i<listOfStudents.size();i++){
+            boolean order = true;
+
+            for (int j=0; j < listOfStudents.size() -1; j++) {
+            
+
+                if(((Students)listOfStudents.get(j)).getId() > (((Students)listOfStudents.get(j+1)).getId())) {
+                    Students swap = listOfStudents.get(j+1);
+                    listOfStudents.set(j+1, listOfStudents.get(j));
+                    listOfStudents.set(j, swap);
+                    order = false;
+                }
+            }
+
+        }       
+        
+        for (int i=0; i<listOfStudents.size(); i++){
+            
+            System.out.println("ID: " + listOfStudents.get(i).getId() + " - " + listOfStudents.get(i).getName().trim());
+            
+        }
+        
+    }
 }
