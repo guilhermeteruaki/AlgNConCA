@@ -86,14 +86,14 @@ public class Library_Functions {
         }); 
     }
      
-     public void add_To_Waiting_List(String bookId, String StudentID){
-        ((Books)cct.getAllBooks().get(bookId)).add_Student_To_Queue(StudentID);
+     public void add_To_Waiting_List(String BookID, String StudentID){
+        ((Books)cct.getAllBooks().get(BookID)).add_Student_To_Queue(StudentID);
          
      }
     
-    // bubblesort from http://www.universidadejava.com.br/pesquisa_ordenacao/bubble-sort/
-    // Collection from https://www.geeksforgeeks.org/how-to-convert-hashmap-to-arraylist-in-java/
-     
+    /** bubblesort from http://www.universidadejava.com.br/pesquisa_ordenacao/bubble-sort/
+    / Collection from https://www.geeksforgeeks.org/how-to-convert-hashmap-to-arraylist-in-java/
+    **/ 
     public void order_Books_Name (HashMap books){
         
         Collection<Books> collectionOfBooks = books.values();
@@ -209,4 +209,25 @@ public class Library_Functions {
         }
         
     }
+    
+    public void lend_Book_To_Queue (String BookID){
+        if ( ((Books)cct.getAllBooks().get(BookID)).get_Waiting_List().length ==0){
+            System.out.println("Sorry there is no queue for this book!");
+        }
+        else{
+            ((Books)cct.getAllBooks().get(BookID)).Rent_To_Queue();
+            System.out.println("Great, the book now is rented!");
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
