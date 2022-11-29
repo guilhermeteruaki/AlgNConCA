@@ -78,7 +78,7 @@ public class Library_Functions {
      public void search_Student_By_ID(HashMap student, String id){
     
         student.forEach((Key, Value)->{
-            if(Integer.toString(((Students)Value).getId()).toLowerCase().contains(id.toLowerCase())){
+            if(Integer.toString(    ((Students)Value).getId())    .toLowerCase().contains(id.toLowerCase())){
                 System.out.println(((Students)Value).getName() + " Student ID: " + Key );
             }
         }); 
@@ -89,6 +89,25 @@ public class Library_Functions {
          
      }
     
-    
+    public void order_Books_Name (HashMap books){
+        
+        for (int i=0; i < books.size() -1; i++) {
+            
+            boolean order = true;
+            
+            for (int j=0; j < books.size() -1 -i; j++) {
+                
+                if(books[j].getTitle().compareToIgnoreCase(books[j + 1].getTitle()) > 0) {
+                    Books swap = books[j];
+                    books[j] = books[j + 1];
+                    books[j + 1] = swap;
+                    order = false;
+                }
+            }
+            
+            if (order)
+                break;
+        }
+    }
     
 }

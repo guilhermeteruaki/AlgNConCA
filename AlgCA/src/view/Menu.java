@@ -41,6 +41,7 @@ public class Menu {
                                      7- Search Student by ID
                                      8- Add Student to Book waiting list
                                      9- Show waiting list for a specific book
+                                     10- Test
                                      999- Exit
                                      *************************************
                                      """);
@@ -91,7 +92,10 @@ public class Menu {
                    }
                     break;
                     
-                    
+                case 10:
+                    userStrChoice = util.askForString("Teste");
+                    System.out.println("printing test");
+                    cct_F.order_Books_Name(cct.getAllBooks());
                     
                     
                 case 999:
