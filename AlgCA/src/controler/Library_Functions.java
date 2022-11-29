@@ -26,7 +26,7 @@ public class Library_Functions {
     public void print_All_Books_Titles(HashMap books){
        
         books.forEach((Key, Value)->{ 
-        System.out.println(((Books)Value).getTitle());
+        System.out.println( "Book Title: "+ ((Books)Value).getTitle().trim() + "Book ID: "+ Key );
         });
     
     }
