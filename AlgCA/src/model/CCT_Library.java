@@ -50,8 +50,13 @@ public class CCT_Library {
      */
     public void Create_Books(String[] book){
                 
-        Books bk = new Books(book[0], book[3], book[1], book[2], book[4]);
+        Books bk = new Books(book[0], book[3], book[1], book[2], book[4], book[5]);
         add_Book_to_Library(bk.getId(), bk);
+        if(book.length>6)
+            for(int i=6; i<book.length;i++){
+                bk.add_Student_To_Queue(book[i]);
+        
+            }
         
         
     }public void Create_Students(String[] student){

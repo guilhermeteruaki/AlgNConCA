@@ -21,12 +21,13 @@ public class Books {
     
 
     
-    public Books (String id, String title, String authorFirstName, String authorLastName, String genre) {
+    public Books (String id, String title, String authorFirstName, String authorLastName, String genre, String rentstat) {
         this.id = id;
         this.title = title;
         this.authorFirstName = authorFirstName;
         this.authorLastName = authorLastName;
         this.genre = genre;
+        this.rent_status = Boolean.parseBoolean(rentstat);
     }
     
     public void set_rent_book(boolean rented){
@@ -77,18 +78,20 @@ public class Books {
     }
 
     public String[] getBookArray(){
-        String csv[] = new String[6];
+        String csv[] = new String[6+student_queue.size()];
         csv[0] = id;
         csv[1] = authorFirstName;
         csv[2] = authorLastName;
         csv[3] = title;
         csv[4] = genre;
         csv[5] = String.valueOf(rent_status);
-        //TODO add queue to CSV
-//        if(!list_Of_borrowed_Books.isEmpty()){
-//            for(int i=3; i<list_Of_borrowed_Books.size()+3; i++){
-//                csv[i] = list_Of_borrowed_Books.get(i-3);
-//            }
+        if(!student_queue.isEmpty()){
+            String[] arrayQueue = new String[student_queue.size()];
+            arrayQueue = student_queue.get_Full_Queue();
+            for(int i=6; i<arrayQueue.length+6; i++){
+                csv[i] = arrayQueue[i-6];
+            }
+        }
         return csv;
     }
     
