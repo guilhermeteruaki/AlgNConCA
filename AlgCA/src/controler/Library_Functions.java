@@ -121,5 +121,34 @@ public class Library_Functions {
             
         }
         
-    }  
+    }
+    
+    public void order_Books_Author (HashMap books){
+        
+        Collection<Books> collectionOfBooks = books.values();
+        ArrayList<Books>  listOfAuthor = new ArrayList<>(collectionOfBooks);
+        
+        for(int i=0;i<listOfAuthor.size();i++){
+            boolean order = true;
+
+            for (int j=0; j < listOfAuthor.size() -1; j++) {
+            
+
+                if((((Books)listOfAuthor.get(j)).getAuthorFirstName().replace(" ","").compareToIgnoreCase(((Books)listOfAuthor.get(j+1)).getAuthorFirstName().replace(" ",""))) > 0) {
+                    Books swap = listOfAuthor.get(j+1);
+                    listOfAuthor.set(j+1, listOfAuthor.get(j));
+                    listOfAuthor.set(j, swap);
+                    order = false;
+                }
+            }
+
+        }       
+        
+        for (int i=0; i<listOfAuthor.size(); i++){
+            
+            System.out.println(listOfAuthor.get(i).getAuthorFirstName().trim());
+            
+        }
+        
+    }
 }

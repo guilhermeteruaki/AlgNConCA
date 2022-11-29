@@ -41,7 +41,8 @@ public class Menu {
                                      7- Search Student by ID
                                      8- Add Student to Book waiting list
                                      9- Show waiting list for a specific book
-                                     10- Test
+                                     10- All Books by Title alphabetical order
+                                     11- All Books by Author alphabetical order
                                      999- Exit
                                      *************************************
                                      """);
@@ -94,8 +95,14 @@ public class Menu {
                     
                 case 10:
                     
-                    System.out.println("printing test");
+                    System.out.println("Printing Books Title Alphabetical order");
                     cct_F.order_Books_Name(cct.getAllBooks());
+                    break;
+                    
+                case 11:
+                    
+                    System.out.println("Printing Books Title Alphabetical order");
+                    cct_F.order_Books_Author(cct.getAllBooks());
                     break;
                     
                 case 999:
