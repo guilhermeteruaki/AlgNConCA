@@ -239,11 +239,18 @@ public class Library_Functions {
       
     }
     
-    
-    
-    
-    
-    
+    public void rent_Book_To_Student(int studentID, String BookID){
+       
+        if (((Books)cct.getAllBooks().get(BookID)).is_rented()){
+            System.out.println("Sorry this book is rented");
+            
+        }else{
+        ((Books)cct.getAllBooks().get(BookID)).set_rent_book(true);
+        add_To_Waiting_List(BookID,Integer.toString(studentID));
+        lend_Book_To_Queue(BookID);
+        ((Students) (cct.getAllStudents()).get(studentID)).setLastBook(BookID);
+        }
+    }
     
     
 }
