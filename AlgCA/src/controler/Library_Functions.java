@@ -91,6 +91,8 @@ public class Library_Functions {
          
      }
     
+    // bubblesort from http://www.universidadejava.com.br/pesquisa_ordenacao/bubble-sort/
+    // Collection from https://www.geeksforgeeks.org/how-to-convert-hashmap-to-arraylist-in-java/
      
     public void order_Books_Name (HashMap books){
         
