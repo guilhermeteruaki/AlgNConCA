@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controler;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import model.*;
 import model.CCT_Library;
@@ -78,7 +80,7 @@ public class Library_Functions {
      public void search_Student_By_ID(HashMap student, String id){
     
         student.forEach((Key, Value)->{
-            if(Integer.toString(    ((Students)Value).getId())    .toLowerCase().contains(id.toLowerCase())){
+            if(Integer.toString(((Students)Value).getId()).toLowerCase().contains(id.toLowerCase())){
                 System.out.println(((Students)Value).getName() + " Student ID: " + Key );
             }
         }); 
@@ -89,25 +91,33 @@ public class Library_Functions {
          
      }
     
+     
     public void order_Books_Name (HashMap books){
         
-        for (int i=0; i < books.size() -1; i++) {
-            
+        Collection<Books> collectionOfBooks = books.values();
+        ArrayList<Books>  listOfBooks = new ArrayList<>(collectionOfBooks);
+        
+        for(int i=0;i<listOfBooks.size();i++){
             boolean order = true;
+
+            for (int j=0; j < listOfBooks.size() -1; j++) {
             
-            for (int j=0; j < books.size() -1 -i; j++) {
-                
-                if(books[j].getTitle().compareToIgnoreCase(books[j + 1].getTitle()) > 0) {
-                    Books swap = books[j];
-                    books[j] = books[j + 1];
-                    books[j + 1] = swap;
+
+                if((((Books)listOfBooks.get(j)).getTitle().replace(" ","").compareToIgnoreCase(((Books)listOfBooks.get(j+1)).getTitle().replace(" ",""))) > 0) {
+                    Books swap = listOfBooks.get(j+1);
+                    listOfBooks.set(j+1, listOfBooks.get(j));
+                    listOfBooks.set(j, swap);
                     order = false;
                 }
             }
+
+        }       
+        
+        for (int i=0; i<listOfBooks.size(); i++){
             
-            if (order)
-                break;
+            System.out.println(listOfBooks.get(i).getTitle().trim());
+            
         }
-    }
-    
+        
+    }  
 }

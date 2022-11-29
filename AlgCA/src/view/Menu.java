@@ -93,10 +93,10 @@ public class Menu {
                     break;
                     
                 case 10:
-                    userStrChoice = util.askForString("Teste");
+                    
                     System.out.println("printing test");
                     cct_F.order_Books_Name(cct.getAllBooks());
-                    
+                    break;
                     
                 case 999:
                     System.out.println("Thank You for using the app. Please come back again !");
