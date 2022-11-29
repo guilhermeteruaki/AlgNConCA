@@ -49,7 +49,7 @@ public class CCT_Library {
      * @param book 
      */
     public void Create_Books(String[] book){
-                
+        
         Books bk = new Books(book[0], book[3], book[1], book[2], book[4], book[5]);
         add_Book_to_Library(bk.getId(), bk);
         if(book.length>6)
@@ -61,10 +61,10 @@ public class CCT_Library {
         
     }public void Create_Students(String[] student){
                 
-        Students st = new Students(Integer.parseInt(student[0]), student[1], student[2]);
+        Students st = new Students(Integer.parseInt(student[0]), student[1], student[2],student[3]);
         add_Student_to_Library(st.getId(), st);
-        if(student.length>3)
-            for(int i=3; i<student.length;i++){
+        if(student.length>4)
+            for(int i=4; i<student.length;i++){
                 st.addBookToList(student[i]);
         
             }

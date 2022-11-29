@@ -18,11 +18,13 @@ public class Students {
     private String name;
     private String nationality;
     private ArrayList<String> list_Of_borrowed_Books = new ArrayList<>();
+    private String last_Borrowed_Book="null";
 
-    public Students(int id, String name, String nationality) {
+    public Students(int id, String name, String nationality, String lastBook) {
         this.id = id;
         this.name = name;
         this.nationality = nationality;
+        this.last_Borrowed_Book = lastBook;
     }
 
     public int getId() {
@@ -50,13 +52,14 @@ public class Students {
     } 
     
     public String[] getStudentArray(){
-        String csv[] = new String[3+list_Of_borrowed_Books.size()];
+        String csv[] = new String[4+list_Of_borrowed_Books.size()];
         csv[0] = Integer.toString(id);
         csv[1] = name;
         csv[2] = nationality;
+        csv[3] = last_Borrowed_Book.toString();
         if(!list_Of_borrowed_Books.isEmpty()){
-            for(int i=3; i<list_Of_borrowed_Books.size()+3; i++){
-                csv[i] = list_Of_borrowed_Books.get(i-3);
+            for(int i=4; i<list_Of_borrowed_Books.size()+4; i++){
+                csv[i] = list_Of_borrowed_Books.get(i-4);
             }
             
         }    
@@ -71,5 +74,18 @@ public class Students {
         return list_Of_borrowed_Books;
     }
     
-      
+    public void setLastBook(String bookID){
+        this.last_Borrowed_Book = bookID;
+        addBookToList(bookID);
+    }
+    
+    public void returnBook(){
+       System.out.println("The Book " + last_Borrowed_Book + " is now returned."); 
+       this.last_Borrowed_Book ="null";
+        
+    }
+    
+    public String get_LastBorrowedBook(){
+        return last_Borrowed_Book;
+    }
 }

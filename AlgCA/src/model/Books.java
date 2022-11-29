@@ -110,6 +110,10 @@ public class Books {
         return r;
     }
     
+   public void get_next_in_queue(){
+       System.out.println(student_queue.First());
+   }
+    
     public String[] get_Waiting_List(){
         return this.student_queue.get_Full_Queue();
     } 

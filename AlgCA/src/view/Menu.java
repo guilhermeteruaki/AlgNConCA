@@ -5,6 +5,7 @@
 package view;
 import Utilities.*;
 import controler.Library_Functions;
+import java.util.ArrayList;
 
 import model.*;
 
@@ -39,12 +40,17 @@ public class Menu {
                                      5- Search Book by Author
                                      6- Student by Name
                                      7- Search Student by ID
-                                     8- Add Student to Book waiting list
+                                     8- Rent a Book to Queue
                                      9- Show waiting list for a specific book
                                      10- All Books by Title alphabetical order
                                      11- All Books by Author alphabetical order
                                      12- All Students by Name alphabetical order
                                      13- All Students by ID order
+                                     14- Get list of Books rented by a Student
+                                     15- Get next Student in queue
+                                     16- Rent Book to Student 
+                                     17- Return a book rented by a Student
+                                        
                                      999- Save and Exit
                                      *************************************
                                      """);
@@ -81,8 +87,7 @@ public class Menu {
                     break;                            
                 case 8:   
                     String bk = util.askForString("Please Provide the EXACT ID of the book");
-                    String st = util.askForString("Please Provide the EXACT ID of the Student");
-                    cct_F.add_To_Waiting_List(bk, st);
+                    cct_F.lend_Book_To_Queue(bk);
                     
                     break;
                     
@@ -118,7 +123,31 @@ public class Menu {
                     System.out.println("Printing Students by ID order");
                     cct_F.order_Students_Id(cct.getAllStudents());
                     break;
+                
+                case 14:
+                    int _id = util.askForInt("Please Insert ID of the Student");
+                    cct_F.list_Of_Book_Rented(_id);
                     
+                    break;
+                    
+                case 15:
+                    userStrChoice = util.askForString("Please Provide the EXACT ID of the book" );
+                    ((Books)cct.getAllBooks().get(userStrChoice)).get_next_in_queue();
+                    break;
+                    
+                case 16:
+                    _id = util.askForInt("Please Insert ID of the Student");
+                    userStrChoice = util.askForString("Please Provide the EXACT ID of the book" );
+                    cct_F.rent_Book_To_Student(_id, userStrChoice);
+                    
+                    break;
+                    
+                case 17:
+                    _id = util.askForInt("Please Insert ID of the Student");
+                    ((Students)cct.getAllStudents().get(_id)).returnBook();
+                    
+                    break;
+                        
                 case 999:
                     System.out.println("Thank You for using the app. Please come back again !");
                     exitMenu=true;
