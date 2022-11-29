@@ -221,7 +221,23 @@ public class Library_Functions {
         
     }
     
-    
+    public void list_Of_Book_Rented(int studentID){
+        System.out.println("This are the books that student "+ studentID + " have borrowed");
+      ArrayList<String> borrowedBooks =  ((Students) (cct.getAllStudents()).get(studentID)).get_List_of_Borrowed_Books();
+      if(borrowedBooks.size()==0){
+          System.out.println("This student never rented a book");
+      }else{
+          for (int i=0; i<borrowedBooks.size();i++){
+              System.out.println(borrowedBooks.get(i));
+                      
+          }
+      }
+          
+                  
+      
+      
+      
+    }
     
     
     
